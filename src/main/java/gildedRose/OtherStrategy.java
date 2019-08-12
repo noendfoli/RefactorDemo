@@ -10,9 +10,4 @@ public class OtherStrategy extends ChangeStrategy {
         }
     }
 
-    private void whenItemQualityGreatThan0(Item item) {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
-        }
-    }
 }

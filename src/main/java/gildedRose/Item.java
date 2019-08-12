@@ -20,7 +20,7 @@ public class Item {
         }else if(name.equals("Sulfuras, Hand of Ragnaros")){
             this.changeStrategy = new SulfurasStrategy();
         }else {
-
+            this.changeStrategy = new OtherStrategy();
         }
     }
 

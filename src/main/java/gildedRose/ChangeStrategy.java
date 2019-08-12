@@ -7,4 +7,9 @@ public  abstract class ChangeStrategy {
             item.quality = item.quality + 1;
         }
     }
+    public void whenItemQualityGreatThan0(Item item) {
+        if (item.quality > 0) {
+            item.quality = item.quality - 1;
+        }
+    }
 }
