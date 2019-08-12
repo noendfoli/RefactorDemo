@@ -10,9 +10,4 @@ public class AgedStrategy extends ChangeStrategy {
         }
     }
 
-    private void whenItemQualitySmallThan50(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-        }
-    }
 }
