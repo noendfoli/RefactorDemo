@@ -5,25 +5,24 @@ public class BackstageStrategy extends ChangeStrategy {
     void changeItem(Item item) {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
-            if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (item.sellIn < 11) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
 
-                if (item.sellIn < 6) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
+            if (item.sellIn < 11) {
+                whenItemQualitySmallThan50(item);
+            }
+
+            if (item.sellIn < 6) {
+                whenItemQualitySmallThan50(item);
             }
         }
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            item.sellIn = item.sellIn - 1;
-        }
+        item.sellIn = item.sellIn - 1;
         if (item.sellIn < 0) {
             item.quality = item.quality - item.quality;
+        }
+    }
+
+    private void whenItemQualitySmallThan50(Item item) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
         }
     }
 }
