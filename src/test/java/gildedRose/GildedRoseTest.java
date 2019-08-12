@@ -196,4 +196,5 @@ public class GildedRoseTest {
         assertEquals(sellIn,gildedRose.items[0].sellIn);
 
     }
+
 }
