@@ -177,4 +177,23 @@ public class GildedRoseTest {
         assertEquals(sellIn,gildedRose.items[0].sellIn);
 
     }
+
+    @Test
+    public void should_change_correct_gilded_rose_items_length_is_one_and_item_name_is_Sulfuras_is_50_sell_in_is_0() {
+        //given
+        Item item = new Item("Sulfuras, Hand of Ragnaros",0,50);
+        Item[] items = new Item[1];
+        int quality = 49;
+        int sellIn = 0;
+        items[0] = item;
+        GildedRose gildedRose = new GildedRose(items);
+
+        //when
+        gildedRose.updateQuality();
+
+        //then
+        assertEquals(quality,gildedRose.items[0].quality);
+        assertEquals(sellIn,gildedRose.items[0].sellIn);
+
+    }
 }
