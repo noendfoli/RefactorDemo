@@ -24,13 +24,17 @@ public class GildedRose {
                 items[i].sellIn = items[i].sellIn - 1;
             }
 
-            if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    itemNameNotEqualsBackstage(items[i]);
-                } else {
-                    if (items[i].quality < 50) {
-                        items[i].quality = items[i].quality + 1;
-                    }
+            sellInSmallThan0(items[i]);
+        }
+    }
+
+    private void sellInSmallThan0(Item item) {
+        if (item.sellIn < 0) {
+            if (!item.name.equals("Aged Brie")) {
+                itemNameNotEqualsBackstage(item);
+            } else {
+                if (item.quality < 50) {
+                    item.quality = item.quality + 1;
                 }
             }
         }
